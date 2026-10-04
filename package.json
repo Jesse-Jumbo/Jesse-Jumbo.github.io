@@ -1,0 +1,12 @@
+{
+  "name": "jesse-chiang-portfolio",
+  "version": "1.0.0",
+  "private": true,
+  "description": "江婕瀅 Jesse Chiang 的個人作品網站",
+  "type": "module",
+  "scripts": {
+    "build": "node scripts/build.mjs",
+    "check": "node scripts/check.mjs"
+  },
+  "engines": { "node": ">=18" }
+}

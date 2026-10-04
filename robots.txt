@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://jesse-jumbo.github.io/sitemap.xml
