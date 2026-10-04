@@ -1,22 +1,32 @@
-# Jesse Chiang｜個人網站
+# Jesse Chiang｜江婕瀅
 
-江婕瀅（Chieh-Ying Chiang / Jesse）的雙語作品網站，供 GitHub Pages 發布。
+嗨，我是 Jesse，主要做後端開發，也參與過前端、特教遊戲和研究工具的製作。
 
-GitHub Pages 發布目標：<https://jesse-jumbo.github.io/>
+這裡是我的個人網站原始碼。網站整理了我做過的專案、工作經驗、修課背景，以及技術分享與社群活動。
 
-英文版：<https://jesse-jumbo.github.io/en/>
+**[前往個人網站](https://jesse-jumbo.github.io/)** · **[English](https://jesse-jumbo.github.io/en/)**
 
-## 網站內容
+## 我做過的事
 
-- 六個代表作品，支援領域篩選與展開設計說明。
-- FOVY、成大歷史系實驗室及 PTWA（中華民國愛自造者學習協會）工作經歷。
-- 修課背景、實作工具、技術寫作與社群參與。
-- Email、GitHub 與 LinkedIn 聯絡方式。
-- 手機排版、鍵盤操作、減少動態效果偏好，以及搜尋引擎中繼資料。
+- **特教遊戲開發**：在 PTWA（中華民國愛自造者學習協會）開發約 27 款特教遊戲、製作共用模板，並帶領兩位成大同學一起開發。[體驗遊戲](https://ptwa-npo.github.io/) · [專案原始碼](https://github.com/PTWA-NPO/PTWA-NPO.github.io)
+- **FOVY**：早期使用 Next.js 開發前端、部署於 Render，後續參與後端與微服務開發。[產品網站](https://www.fovyskill.com/)
+- **技術分享**：曾與 Ivan Chiou 在 2023 iThome Cloud Summit 共同分享特教遊戲專案，我負責的部分涵蓋需求、模板設計與開發驗證。[演講介紹](https://cloudsummit.ithome.com.tw/2023/speaker-page/1116)
+- **Tainan.py**：參與籌辦台南 Python 社群活動，留下了 [2022 年「Tainan.py：重啟」](https://www.accupass.com/event/2212051154471502282108)與 [2023 年「Python In Tainan」](https://www.accupass.com/event/2304211233301635228960)兩場紀錄。目前缺少接手籌辦的總召，歡迎有興趣的朋友[聯絡我](https://jesse-jumbo.github.io/#contact)。
 
-## 修改與預覽
+更多作品、實作細節與工作經驗，可以在網站裡查看。
 
-使用 Node.js 18 以上版本；沒有第三方建置套件，不需執行 `npm install`。
+## 作品畫面與致謝
+
+網站中的遊戲截圖來自 [TankMan](https://github.com/Jesse-Jumbo/TankMan) 和團隊作品 [Program Design II](https://github.com/Jesse-Jumbo/program-design-II)。感謝一起完成專案的夥伴，也謝謝原素材作者；美術與音效的來源請見各專案說明。
+
+FOVY 的程式碼未公開，可以透過產品網站了解服務。其他作品若有公開原始碼，都附在網站的作品介紹中。
+
+<details>
+<summary>網站開發與維護</summary>
+
+## 本機預覽
+
+網站使用 HTML、CSS 與 JavaScript，透過 Node.js 產生中英文頁面。需要 Node.js 18 以上版本，沒有第三方建置套件，不需執行 `npm install`。
 
 ```sh
 npm run build
@@ -24,36 +34,23 @@ npm run check
 python3 -m http.server 8000
 ```
 
-在瀏覽器開啟 <http://localhost:8000/>。也可直接開啟 `index.html` 預覽；所有內容與展開說明皆可離線閱讀。
+在瀏覽器開啟 <http://localhost:8000/>。
 
-| 要改的內容 | 檔案 |
+## 檔案結構
+
+| 內容 | 檔案 |
 | --- | --- |
-| 中英文文案、經歷、作品 | `src/content.mjs` |
-| 版面與 HTML 結構 | `scripts/build.mjs` |
-| 顏色、字級、手機排版 | `assets/styles.css` |
-| 分類篩選、Email 複製 | `assets/site.js` |
+| 中英文文案、經歷與作品 | `src/content.mjs` |
+| HTML 產生程式 | `scripts/build.mjs` |
+| 樣式與響應式排版 | `assets/styles.css` |
+| 作品篩選與 Email 複製 | `assets/site.js` |
 
-變更文案或版面後，重新執行 `npm run build`，一併提交產生的 `index.html` 與 `en/index.html`。請勿只手動編輯產生的 HTML，否則下次建置會覆蓋修改。
+修改文案或版面後，執行 `npm run build`，並一併提交產生的 `index.html` 與 `en/index.html`。直接編輯這兩份 HTML 的變更，會在下次建置時被覆蓋。
 
-## GitHub Pages
+## 部署
 
-本網站為純靜態檔案，可使用儲存庫 **Settings → Pages → Deploy from a branch → main / (root)** 發布，不需要付費服務或 API 金鑰。`.nojekyll` 讓 Pages 直接提供已產生的靜態內容。
+GitHub Pages 的發布來源使用 **Deploy from a branch → main / (root)**。`.nojekyll` 讓 GitHub Pages 直接提供已建置的靜態檔案。
 
-檢查與發布前，請執行 `npm run build && npm run check`。若 Pages 原本使用不同來源分支，請保留既有設定，並把網站檔案提交到該來源。
+發布前執行 `npm run build` 與 `npm run check`，再將變更提交至 `main`。
 
-## 內容與素材
-
-內容依 2026-10-04 提供的履歷、修課資料、早期體驗學習報告，以及公開專案原始碼整理。僅呈現專業經歷；未收錄成績單、生日、學號、電話、住址與原始申請文件。
-
-- `assets/tankman.png`：來自 [TankMan](https://github.com/Jesse-Jumbo/TankMan/blob/main/asset/image/view_ex.png) 的作品畫面。原專案另列美術與音效來源。
-- `assets/rpg-battle.png`：來自 [Program Design II](https://github.com/Jesse-Jumbo/program-design-II/blob/main/doc/readme/03-battle.png) 的團隊作品畫面。
-- 作品畫面用於展示原專案，素材權利仍屬各原作者；不代表另行授予素材授權。
-- FOVY 依履歷與本人補充描述，呈現早期 Next.js／Render 前端及後續後端工作；提供 [產品網站](https://www.fovyskill.com/) 連結，原始碼未公開。
-- PTWA 特教遊戲的約 27 款個人開發經驗、共用模板，以及帶領兩位成大同學協作，依本人 2026-10-04 補充；這個數字不等於整個網站目前的遊戲總數。程式碼連向 [PTWA 官方專案](https://github.com/PTWA-NPO/PTWA-NPO.github.io)。
-- 2023 iThome Cloud Summit 是 Jesse 與 Ivan Chiou 共同發表；Jesse 的分享涵蓋需求、模板與開發驗證。簡報第 26 頁「專案部署」起及後續自動化內容不列為 Jesse 的個人成果。
-- Tainan.py 提供 2022/12/17 與 2023/07/01 的活動紀錄；歡迎接手籌辦的訊息由本人提供，後續情況有變時請更新。
-- Program Design II 的個人細項分工在來源 README 中仍有待確認標記，因此網站以團隊成果呈現。
-- `history-ai-chatbot` 目前原始碼使用 Gemini 生成答案，與舊 README 的全本機敘述不同；網站採不限定供應商的描述。
-- 團隊競賽成績不等同個人獲獎；修課中項目與已修課程分開列示。
-
-原始申請資料、訪談逐字稿與私人工作文件均不應加入此公開儲存庫。
+</details>
